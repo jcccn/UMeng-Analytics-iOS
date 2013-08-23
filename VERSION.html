@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1187.39">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 16.0px Helvetica}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 23.0px Helvetica; min-height: 28.0px}
+    p.p7 {margin: 0.0px 0.0px 13.0px 0.0px; line-height: 19.0px; font: 12.0px Courier}
+    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Courier}
+    p.p9 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'Heiti SC Light'}
+    li.li2 {margin: 0.0px 0.0px 6.0px 0.0px; font: 13.0px Helvetica}
+    li.li3 {margin: 0.0px 0.0px 6.0px 0.0px; font: 13.0px 'Heiti SC Light'}
+    li.li4 {margin: 0.0px 0.0px 6.0px 0.0px; font: 12.0px Courier}
+    li.li6 {margin: 0.0px 0.0px 13.0px 0.0px; line-height: 19.0px; font: 13.0px 'Heiti SC Light'}
+    li.li7 {margin: 0.0px 0.0px 13.0px 0.0px; line-height: 19.0px; font: 12.0px Courier}
+    span.s1 {font: 16.0px 'Heiti SC Light'}
+    span.s2 {font: 13.0px 'Heiti SC Light'}
+    span.s3 {font: 13.0px Helvetica}
+    span.s4 {font: 12.0px Courier}
+    span.s5 {font: 12.0px 'Heiti SC Light'}
+    ol.ol1 {list-style-type: decimal}
+    ul.ul1 {list-style-type: none}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1"><b>版本：</b></span><b>v2.2.0 (UDID+OpenUDID)</b></p>
+<ul class="ul1">
+  <li class="li2"><span class="s2">发布日期：</span>2013.04.01</li>
+  <li class="li3"><span class="s3"></span>主要更新：</li>
+  <ol class="ol1">
+    <li class="li4">UMOnlineConfigDidFinishedNotification<span class="s3"> </span><span class="s2">在网络获取失败时也会被</span><span class="s3">post</span><span class="s2">，使用上次的缓存数据</span></li>
+    <li class="li2">event<span class="s2">传值作了长度限制</span>,eventId<span class="s2">、</span>attributes<span class="s2">的</span>key<span class="s2">最大为</span>128<span class="s2">个</span>bytes(128<span class="s2">个英文及数字或</span>42<span class="s2">个左右汉字</span>),label<span class="s2">、</span>attributes<span class="s2">的</span>value<span class="s2">最大为</span>256<span class="s2">个</span>bytes(256<span class="s2">个英文及数字或</span>84<span class="s2">个左右汉字</span>), <span class="s2">超过后将被截短</span>,<span class="s2">其中</span>eventId<span class="s2">超过的将抛弃不再发送</span></li>
+    <li class="li4">startWithAppkey<span class="s2">方法不在</span>application:didFinishLaunchingWithOptions:<span class="s2">里也会被调用</span><span class="s3">,</span><span class="s2">但常规</span><span class="s3">Xcode</span><span class="s2">工程不建议这样调用</span></li>
+  </ol>
+</ul>
+<p class="p5"><br></p>
+<p class="p1"><span class="s1"><b>版本：</b></span><b>v2.1.3 (UDID+OpenUDID)</b></p>
+<ul class="ul1">
+  <li class="li2"><span class="s2">发布日期：</span>2012.12.28</li>
+  <li class="li3"><span class="s3"></span>主要更新：</li>
+  <ol class="ol1">
+    <li class="li3"><span class="s3"></span>修复<span class="s3"> </span><span class="s4">SEND_ON_EXIT</span><span class="s3"> </span>策略在无网络情况下计数的<span class="s3">bug</span></li>
+    <li class="li2"><span class="s2">修复</span>Crash Log<span class="s2">中</span><span class="s4">dSYM UUID</span><span class="s2">生成的</span>bug</li>
+  </ol>
+</ul>
+<p class="p5"><br></p>
+<p class="p1"><span class="s1"><b>版本：</b></span><b>v2.1.2 (UDID+OpenUDID)</b></p>
+<ul class="ul1">
+  <li class="li2"><span class="s2">发布日期：</span>2012.12.19</li>
+  <li class="li3"><span class="s3"></span>主要更新：</li>
+  <ol class="ol1">
+    <li class="li4"><span class="s3"></span><span class="s2">增加</span>SEND_INTERVAL<span class="s3">,</span>SEND_ON_EXIT<span class="s2">两种发送策略</span></li>
+    <li class="li3"><span class="s3"></span>原有的<span class="s4">REALTIME</span><span class="s3">,</span><span class="s4">SENDWIFIONLY</span>只在<span class="s5">模拟器</span>和<span class="s4">DEBUG</span>模式下生效，真机<span class="s3">release</span>模式会自动改成<span class="s4">BATCH</span>。具体参见<span class="s3"> <a href="http://blog.umeng.com/index.php/2012/12/0601/"><span class="s2">关于发送策略及发送策略变更的说明</span></a></span></li>
+    <li class="li4"><span class="s3"></span><span class="s2">增加</span><span class="s3"> </span>+ (void)setLogSendInterval:(double)second;<span class="s3"> </span><span class="s2">来设置最小发送间隔</span></li>
+    <li class="li3"><span class="s3"></span>删除统计<span class="s3">SDK</span>自带的单向用户反馈组件，请使用独立的双向用户反馈<span class="s3">SDK</span></li>
+    <li class="li4">checkUpdate<span class="s3"> </span><span class="s2">的回调方法放到</span>MainThread<span class="s3"> </span><span class="s2">中执行</span></li>
+    <li class="li4"><span class="s3"></span><span class="s2">修复</span>crash log<span class="s2">地址错误的</span><span class="s3">bug</span></li>
+    <li class="li4"><span class="s3"></span><span class="s2">修复</span>device_id<span class="s2">为空的</span><span class="s3">bug</span></li>
+    <li class="li4"><span class="s3"></span><span class="s2">修复</span>setAppVersion:<span class="s2">的</span><span class="s3">bug</span></li>
+  </ol>
+</ul>
+<p class="p5"><br></p>
+<p class="p1"><span class="s1"><b>版本：</b></span><b>v2.1.1 (UDID+OpenUDID)</b></p>
+<ul class="ul1">
+  <li class="li2"><span class="s2">发布日期：</span>2012.09.19</li>
+  <li class="li3"><span class="s3"></span>主要更新：</li>
+  <ol class="ol1">
+    <li class="li2"><span class="s2">兼容</span>iOS6,<span class="s2">增加</span>armv7s<span class="s2">架构</span></li>
+  </ol>
+</ul>
+<p class="p5"><br></p>
+<p class="p1"><span class="s1"><b>版本：</b></span><b>v2.1.0 (UDID+OpenUDID)</b></p>
+<ul class="ul1">
+  <li class="li2"><span class="s2">发布日期：</span>2012.09.11</li>
+  <li class="li6"><span class="s3"></span>主要更新：</li>
+  <ol class="ol1">
+    <li class="li3"><span class="s3"></span>增加地理位置统计的接口</li>
+  </ol>
+  <li class="li7">+[MobClick setLocation:(CLLocation *)location]<span class="s3">;<br>
+</span>+[MobClick setLatitude:(double)latitude longitude:(double)longitude];</li>
+</ul>
+<p class="p8">2. `checkUpdate`<span class="s5">方法对</span>UIAlertView<span class="s5">的标题和按钮文字增加</span>i18N<span class="s5">多国语言支持</span></p>
+<p class="p9"><span class="s4">3. `<b>event</b>`</span>在程序<span class="s4">`launch`</span>事件发生之后发送<span class="s4">,</span>修正用户集中在<span class="s4">0</span>点出现</p>
+<p class="p9"><span class="s4">4. </span>错误报告发送逻辑修改，旧版本的<span class="s4">crash</span>在<span class="s4">App</span>更新时不再发送，避免旧版<span class="s4">crash</span>出现在新版本中</p>
+<p class="p8">5. <span class="s5">开放</span> `startSession`<span class="Apple-converted-space">  </span><span class="s5">接口</span>,<span class="s5">详见头文件注释说明</span></p>
+<p class="p8">6. <span class="s5">增加在线参数获取结束的</span>`Notification`: `UMOnlineConfigDidFinishedNotification`<span class="s5">，开发者可以监听此通知得到最新的在线参数</span></p>
+<p class="p8">7. <span class="s5">如果需要在</span>webview<span class="s5">中用</span>js<span class="s5">调用友盟接口，请使用</span>https:<i>//github.com/marcuswestin/WebViewJavascriptBridge</i></p>
+<p class="p5"><br></p>
+<p class="p1"><span class="s1"><b>版本：</b></span><b>v2.0.0 (UDID+OpenUDID)</b></p>
+<ul class="ul1">
+  <li class="li2"><span class="s2">发布日期：</span>2012.05.21</li>
+  <li class="li3"><span class="s3"></span>主要更新：</li>
+  <ol class="ol1">
+    <li class="li2">event<span class="s2">增加时长统计</span></li>
+    <li class="li3"><span class="s3">event</span>增加属性统计，当<span class="s3">event</span>发生时可以回传多个相关属性</li>
+    <li class="li2"><span class="s2">使用硬件</span>UDID(uniqueIdentifier)<span class="s2">为统计标准，兼有</span>mac<span class="s2">地址的统计</span></li>
+    <li class="li4"><span class="s3"></span><span class="s2">去掉静态编译的</span>libz<span class="s3">,</span><span class="s2">使</span><span class="s3">SDK binary</span><span class="s2">文件</span><span class="s3"> </span>libMobClickLibrary.a<span class="s3"> </span><span class="s2">大小进一步缩减</span><span class="s3"> </span>1.2M<span class="s3"> —&gt; </span>910K<span class="s3">, </span><span class="s2">但需要手动添加</span>libz.dylib</li>
+  </ol>
+</ul>
+<p class="p7">TARGETS<span class="s3">–&gt;</span>Build Phases<span class="s3">–&gt;</span>Link Binary With Libraries<span class="s3">–&gt; + –&gt;</span>libz.dylib</p>
+<p class="p5"><br></p>
+<p class="p1"><span class="s1"><b>版本：</b></span><b>v1.7 (OpenUDID)</b></p>
+<ul class="ul1">
+  <li class="li2"><span class="s2">发布日期：</span>2012.03.28</li>
+  <li class="li3"><span class="s3"></span>主要更新：</li>
+  <ol class="ol1">
+    <li class="li2"><span class="s2">简化</span>SDK<span class="s2">集成，一句代码集成友盟</span>SDK([MobClick startWithAppkey:]),<span class="s2">不再需要手动</span>link framework</li>
+    <li class="li2">SDK binary<span class="s2">文件</span> libMobClickLibrary.a <span class="s2">大小缩减近</span>40%,1.9M —&gt; 1.2M</li>
+    <li class="li3"><span class="s3"></span>增加页面访问路径统计</li>
+    <li class="li3"><span class="s3"></span>使用<span class="s3">openUDID</span>作用户标识（可能会造成您的新增用户数据波动）</li>
+    <li class="li2"><span class="s2">增加</span>mac<span class="s2">地址字段</span></li>
+  </ol>
+</ul>
+<p class="p5"><br></p>
+<p class="p1"><span class="s1"><b>版本：</b></span><b>v1.6.8 (UDID)</b></p>
+<ul class="ul1">
+  <li class="li2"><span class="s2">发布日期：</span>2011.12.16</li>
+  <li class="li3"><span class="s3"></span>主要更新：</li>
+  <ol class="ol1">
+    <li class="li3"><span class="s3"></span>按渠道自动更新检测</li>
+    <li class="li3"><span class="s3"></span>使用在线参数功能，可以让你动态修改应用中的参数值</li>
+    <li class="li3"><span class="s3"></span>动态调整发送策略</li>
+  </ol>
+</ul>
+<p class="p5"><br></p>
+<p class="p1"><span class="s1"><b>版本：</b></span><b>v1.6.7 (UDID)</b></p>
+<ul class="ul1">
+  <li class="li2"><span class="s2">发布日期：</span>2011.11.23</li>
+  <li class="li3"><span class="s3"></span>主要更新：</li>
+  <ol class="ol1">
+    <li class="li3"><span class="s3"></span>解决<span class="s3">gprs</span>时、网络条件比较差时界面卡的情况。<span class="s3">(</span>去掉<span class="s4">Reachability.h</span>判断网络<span class="s3">)</span></li>
+    <li class="li4"><span class="s3"></span><span class="s2">去掉</span>Other Linker Flags<span class="s3"> </span><span class="s2">需要设置</span>-all_load<span class="s2">和</span>-ObjC</li>
+    <li class="li4"><span class="s3"></span><span class="s2">采用</span>NSNotificationCenter<span class="s2">监听</span><span class="s3">App</span><span class="s2">的打开和关闭事件，省去了集成</span><span class="s3">SDK</span><span class="s2">时需要手动调用</span>appLaunched<span class="s2">，</span>appTerminated<span class="s2">的步骤</span></li>
+    <li class="li4"><span class="s3"></span><span class="s2">增加</span><span class="s3"> SDK log</span><span class="s2">开关</span>+ (void)setLogEnabled:(BOOL)value;</li>
+    <li class="li4"><span class="s3"></span><span class="s2">增加异常捕捉开关</span>+ (void)setCrashReportEnabled:(BOOL)value;<span class="s3">,</span><span class="s2">需要在</span>setDelegate<span class="s2">方法之前调用</span></li>
+    <li class="li2"><span class="s2">用户反馈界面支持</span>iPad</li>
+  </ol>
+</ul>
+</body>
+</html>
