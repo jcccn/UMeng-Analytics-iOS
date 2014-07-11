@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name     = 'UMAnalytics'
-  s.version  = '2.2.2'
+  s.version  = '3.1.2'
   s.summary  = 'Umeng Analytics is the leading mobile app analytical platform in China.'
   s.homepage = 'https://github.com/jcccn/UMeng-Analytics-iOS'
   s.author   = { 'Chuncheng Jiang' => 'jccuestc@gmail.com' }
@@ -8,8 +8,8 @@ Pod::Spec.new do |s|
                    © 2011-2015 Umeng.com , All Rights Reserved.
                  LICENSE
                }
-  s.source   = { :git => 'https://github.com/jcccn/UMeng-Analytics-iOS.git', :tag => '2.2.2' }
-  s.source_files = 'UMAnalytics/MobClick.h'
+  s.source   = { :git => 'https://github.com/jcccn/UMeng-Analytics-iOS.git', :tag => '3.1.2' }
+  s.source_files = "UMAnalytics/*.{h,m}"
   s.platform     = :ios, '5.0'
   s.frameworks   = "UIKit"
   s.libraries    = 'z'
