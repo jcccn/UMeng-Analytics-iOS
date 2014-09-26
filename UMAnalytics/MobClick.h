@@ -5,7 +5,7 @@
 //  Created by Aladdin on 2010-03-25.
 //  Updated by Minghua on 2014-05-21.
 //  Copyright (C) 2010-2014 Umeng.com . All rights reserved.
-//  Version 3.1.3 , updated_at 2014-05-21.
+//  Version 3.1.2 , updated_at 2014-05-21.
 
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
