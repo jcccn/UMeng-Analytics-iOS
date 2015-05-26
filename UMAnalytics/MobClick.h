@@ -2,7 +2,7 @@
 //  MobClick.h
 //  Analytics
 //
-//  Copyright (C) 2010-2015 Umeng.com . All rights reserved.
+//  Copyright (C) 2010-2014 Umeng.com . All rights reserved.
 
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
@@ -36,16 +36,16 @@ typedef enum {
 ///---------------------------------------------------------------------------------------
 
 /** 设置app版本号。由于历史原因需要和xcode3工程兼容,友盟提取的是Build号(CFBundleVersion)，
- 如果需要和App Store上的版本一致,请调用此方法。
+    如果需要和App Store上的版本一致,请调用此方法。
  @param appVersion 版本号，例如设置成`XcodeAppVersion`.
  @return void.
- */
+*/
 + (void)setAppVersion:(NSString *)appVersion;
 
 /** 开启CrashReport收集, 默认YES(开启状态).
  @param value 设置为NO,可关闭友盟CrashReport收集功能.
  @return void.
- */
+*/
 + (void)setCrashReportEnabled:(BOOL)value;
 
 /** 设置是否打印sdk的log信息, 默认NO(不打印log).
@@ -56,7 +56,7 @@ typedef enum {
 
 /** 设置是否开启background模式, 默认YES.
  @param value 为YES,SDK会确保在app进入后台的短暂时间保存日志信息的完整性，对于已支持background模式和一般app不会有影响.
- 如果该模式影响某些App在切换到后台的功能，也可将该值设置为NO.
+        如果该模式影响某些App在切换到后台的功能，也可将该值设置为NO.
  @return void.
  */
 + (void)setBackgroundTaskEnabled:(BOOL)value;
@@ -74,7 +74,7 @@ typedef enum {
 /** 初始化友盟统计模块
  @param appKey 友盟appKey.
  @return void
- */
+*/
 + (void)startWithAppkey:(NSString *)appKey;
 
 /** 初始化友盟统计模块
@@ -88,7 +88,7 @@ typedef enum {
 /** 当reportPolicy == SEND_INTERVAL 时设定log发送间隔
  @param second 单位为秒,最小90秒,最大86400秒(24hour).
  @return void.
- */
+*/
 + (void)setLogSendInterval:(double)second;
 
 /** 设置日志延迟发送
@@ -105,7 +105,7 @@ typedef enum {
  @param pageName 统计的页面名称.
  @param seconds 单位为秒，int型.
  @return void.
- */
+*/
 + (void)logPageView:(NSString *)pageName seconds:(int)seconds;
 
 /** 自动页面时长统计, 开始记录某个页面展示时长.
@@ -131,7 +131,7 @@ typedef enum {
 ///---------------------------------------------------------------------------------------
 
 /** 自定义事件,数量统计.
- 使用前，请先到友盟App管理后台的设置->编辑自定义事件 中添加相应的事件ID，然后在工程中传入相应的事件ID
+使用前，请先到友盟App管理后台的设置->编辑自定义事件 中添加相应的事件ID，然后在工程中传入相应的事件ID
  
  @param  eventId 网站上注册的事件Id.
  @param  label 分类标签。不同的标签会分别进行统计，方便同一事件的不同标签的对比,为nil或空字符串时后台会生成和eventId同名的标签.
@@ -152,8 +152,8 @@ typedef enum {
 + (void)event:(NSString *)eventId attributes:(NSDictionary *)attributes counter:(int)number;
 
 /** 自定义事件,时长统计.
- 使用前，请先到友盟App管理后台的设置->编辑自定义事件 中添加相应的事件ID，然后在工程中传入相应的事件ID.
- beginEvent,endEvent要配对使用,也可以自己计时后通过durations参数传递进来
+    使用前，请先到友盟App管理后台的设置->编辑自定义事件 中添加相应的事件ID，然后在工程中传入相应的事件ID.
+    beginEvent,endEvent要配对使用,也可以自己计时后通过durations参数传递进来
  
  @param  eventId 网站上注册的事件Id.
  @param  label 分类标签。不同的标签会分别进行统计，方便同一事件的不同标签的对比,为nil或空字符串时后台会生成和eventId同名的标签.
@@ -163,10 +163,10 @@ typedef enum {
  
  
  @warning 每个event的attributes不能超过10个
- eventId、attributes中key和value都不能使用空格和特殊字符，且长度不能超过255个字符（否则将截取前255个字符）
- id， ts， du是保留字段，不能作为eventId及key的名称
- 
- */
+    eventId、attributes中key和value都不能使用空格和特殊字符，且长度不能超过255个字符（否则将截取前255个字符）
+    id， ts， du是保留字段，不能作为eventId及key的名称
+
+*/
 + (void)beginEvent:(NSString *)eventId;
 /** 自定义事件,时长统计.
  使用前，请先到友盟App管理后台的设置->编辑自定义事件 中添加相应的事件ID，然后在工程中传入相应的事件ID.
@@ -214,17 +214,17 @@ typedef enum {
 ///---------------------------------------------------------------------------------------
 
 /** 按渠道检测更新
- 检查当前app是否有更新，有则弹出UIAlertView提示用户,当用户点击升级按钮时app会跳转到您预先设置的网址。
- 无更新不做任何操作。
- 需要先在服务器端设置app版本信息，默认渠道是App Store.
+    检查当前app是否有更新，有则弹出UIAlertView提示用户,当用户点击升级按钮时app会跳转到您预先设置的网址。
+    无更新不做任何操作。
+    需要先在服务器端设置app版本信息，默认渠道是App Store.
  @return void.
  */
 + (void)checkUpdate;
 
 /** 按渠道检测更新
- 检查当前app是否有更新，有则弹出UIAlertView提示用户,当用户点击升级按钮时app会跳转到您预先设置的网址。
- 无更新不做任何操作。
- 需要先在服务器端设置app版本信息，默认渠道是App Store.
+    检查当前app是否有更新，有则弹出UIAlertView提示用户,当用户点击升级按钮时app会跳转到您预先设置的网址。
+    无更新不做任何操作。
+    需要先在服务器端设置app版本信息，默认渠道是App Store.
  
  @param title 对应UIAlertView的title.
  @param cancelTitle 对应UIAlertView的cancelTitle.
@@ -234,7 +234,7 @@ typedef enum {
 + (void)checkUpdate:(NSString *)title cancelButtonTitle:(NSString *)cancelTitle otherButtonTitles:(NSString *)otherTitle;
 
 /** 设置自由控制更新callback函数
- 若程序需要自由控制收到更新内容后的流程可设置delegate和callback函数来完成
+    若程序需要自由控制收到更新内容后的流程可设置delegate和callback函数来完成
  
  @param delegate 需要自定义checkUpdate的对象.
  @param callBackSelectorWithDictionary 当checkUpdate事件完成时此方法会被调用,同时标记app更新信息的字典被传回.
@@ -247,16 +247,16 @@ typedef enum {
 ///---------------------------------------------------------------------------------------
 
 /** 此方法会检查并下载服务端设置的在线参数,例如可在线更改SDK端发送策略。
- 请在[MobClick startWithAppkey:]方法之后调用;
- 监听在线参数更新是否完成，可注册UMOnlineConfigDidFinishedNotification通知
+    请在[MobClick startWithAppkey:]方法之后调用;
+    监听在线参数更新是否完成，可注册UMOnlineConfigDidFinishedNotification通知
  @param .
  @return void.
  */
 + (void)updateOnlineConfig;
 
 /** 返回已缓存的在线参数值
- 带参数的方法获取某个key的值，不带参数的获取所有的在线参数.
- 需要先调用updateOnlineConfig才能使用,如果想知道在线参数是否完成完成，请监听UMOnlineConfigDidFinishedNotification
+    带参数的方法获取某个key的值，不带参数的获取所有的在线参数.
+    需要先调用updateOnlineConfig才能使用,如果想知道在线参数是否完成完成，请监听UMOnlineConfigDidFinishedNotification
  @param key
  @return (NSString *) .
  */
