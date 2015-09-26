@@ -208,40 +208,7 @@ typedef enum {
 + (void)event:(NSString *)eventId attributes:(NSDictionary *)attributes durations:(int)millisecond;
 
 
-#pragma mark AutoUpdate and Online Configure
-///---------------------------------------------------------------------------------------
-/// @name  按渠道自动更新
-///---------------------------------------------------------------------------------------
-
-/** 按渠道检测更新
-    检查当前app是否有更新，有则弹出UIAlertView提示用户,当用户点击升级按钮时app会跳转到您预先设置的网址。
-    无更新不做任何操作。
-    需要先在服务器端设置app版本信息，默认渠道是App Store.
- @return void.
- */
-+ (void)checkUpdate;
-
-/** 按渠道检测更新
-    检查当前app是否有更新，有则弹出UIAlertView提示用户,当用户点击升级按钮时app会跳转到您预先设置的网址。
-    无更新不做任何操作。
-    需要先在服务器端设置app版本信息，默认渠道是App Store.
- 
- @param title 对应UIAlertView的title.
- @param cancelTitle 对应UIAlertView的cancelTitle.
- @param otherTitle 对应UIAlertView的otherTitle.
- @return void.
- */
-+ (void)checkUpdate:(NSString *)title cancelButtonTitle:(NSString *)cancelTitle otherButtonTitles:(NSString *)otherTitle;
-
-/** 设置自由控制更新callback函数
-    若程序需要自由控制收到更新内容后的流程可设置delegate和callback函数来完成
- 
- @param delegate 需要自定义checkUpdate的对象.
- @param callBackSelectorWithDictionary 当checkUpdate事件完成时此方法会被调用,同时标记app更新信息的字典被传回.
- */
-+ (void)checkUpdateWithDelegate:(id)delegate selector:(SEL)callBackSelectorWithDictionary;
-
-
+#pragma mark Online Configure
 ///---------------------------------------------------------------------------------------
 /// @name  在线参数：可以动态设定应用中的参数值
 ///---------------------------------------------------------------------------------------
