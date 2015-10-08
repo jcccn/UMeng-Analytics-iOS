@@ -2,7 +2,7 @@
 //  MobClick.h
 //  Analytics
 //
-//  Copyright (C) 2010-2014 Umeng.com . All rights reserved.
+//  Copyright (C) 2010-2015 Umeng.com . All rights reserved.
 
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
@@ -11,10 +11,10 @@
 #define XcodeAppVersion [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
 
 /**
- REALTIME只在模拟器和DEBUG模式下生效，真机的release模式会自动改成BATCH。
+ REALTIME只在“集成测试”设备的DEBUG模式下有效，其它情况下的REALTIME会改为使用BATCH策略。
  */
 typedef enum {
-    REALTIME = 0,       //实时发送              (只在测试模式下有效)
+    REALTIME = 0,       //实时发送              (只在“集成测试”设备的DEBUG模式下有效)
     BATCH = 1,          //启动发送
     SEND_INTERVAL = 6,  //最小间隔发送           ([90-86400]s, default 90s)
     
@@ -24,9 +24,8 @@ typedef enum {
     SEND_ON_EXIT = 7    //进入后台时发送         (not avilable, will be support later)
 } ReportPolicy;
 
+
 @class CLLocation;
-
-
 @interface MobClick : NSObject <UIAlertViewDelegate>
 
 #pragma mark basics
@@ -208,6 +207,22 @@ typedef enum {
 + (void)event:(NSString *)eventId attributes:(NSDictionary *)attributes durations:(int)millisecond;
 
 
+#pragma mark - user methods
+/** active user sign-in.
+ 使用sign-In函数后，如果结束该PUID的统计，需要调用sign-Off函数
+ @param puid : user's ID
+ @param provider : 不能以下划线"_"开头，使用大写字母和数字标识; 如果是上市公司，建议使用股票代码。
+ @return void.
+ */
++ (void)profileSignInWithPUID:(NSString *)puid;
++ (void)profileSignInWithPUID:(NSString *)puid provider:(NSString *)provider;
+
+/** active user sign-off.
+ 停止sign-in PUID的统计
+ @return void.
+ */
++ (void)profileSignOff;
+
 #pragma mark Online Configure
 ///---------------------------------------------------------------------------------------
 /// @name  在线参数：可以动态设定应用中的参数值
@@ -229,7 +244,6 @@ typedef enum {
  */
 + (NSString *)getConfigParams:(NSString *)key;
 + (NSDictionary *)getConfigParams;
-+ (NSString *)getAdURL;
 
 ///---------------------------------------------------------------------------------------
 /// @name 地理位置设置
@@ -280,4 +294,5 @@ typedef enum {
  */
 + (void)startSession:(NSNotification *)notification;
 
++ (NSString *)getAdURL;
 @end
